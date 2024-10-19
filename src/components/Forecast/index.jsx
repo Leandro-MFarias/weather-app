@@ -1,6 +1,4 @@
 export function Forecast({ forecast }) {
-  console.log(forecast);
-
   let dailyForecast = {};
 
   for (let daily of forecast.list) {
