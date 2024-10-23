@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Sun (moved up slightly) -->
+  <circle cx="60" cy="35" r="20" fill="#FFD700"/>
+  
+  <!-- Single cloud (moved down to overlap sun) -->
+  <path d="
+    M25 50
+    C25 41 32 35 40 35
+    C42 30 49 27 55 30
+    C59 25 67 25 72 30
+    C77 30 82 35 82 40
+    C82 47 77 51 72 51
+    L40 51
+    C32 51 25 47 25 50
+    Z" 
+    fill="#CCCCCC"
+    filter="drop-shadow(0 2px 2px rgba(0,0,0,0.1))"/>
+    
+  <!-- Rain drops in multiple layers -->
+  <g fill="#89CFF0">
+    <!-- First layer -->
+    <path d="M35 55l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M45 55l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M55 55l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M65 55l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M75 55l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Second layer -->
+    <path d="M30 65l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M40 65l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M50 65l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M60 65l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M70 65l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Third layer -->
+    <path d="M35 75l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M45 75l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M55 75l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M65 75l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M75 75l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>

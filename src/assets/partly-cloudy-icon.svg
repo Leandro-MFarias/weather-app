@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Large, simple sun -->
+  <circle cx="60" cy="40" r="20" fill="#FFD700"/>
+  
+  <!-- Smooth clouds using bezier curves -->
+  <path d="
+    M28 55
+    C28 46 35 40 43 40
+    C45 35 52 32 58 35
+    C62 30 70 30 75 35
+    C80 35 85 40 85 45
+    C85 52 80 56 75 56
+    L43 56
+    C35 56 28 52 28 55
+    Z" 
+    fill="#FFFFFF"
+    filter="drop-shadow(0 2px 2px rgba(0,0,0,0.1))"/>
+    
+  <path d="
+    M15 65
+    C15 56 22 50 30 50
+    C32 45 39 42 45 45
+    C49 40 57 40 62 45
+    C67 45 72 50 72 55
+    C72 62 67 66 62 66
+    L30 66
+    C22 66 15 62 15 65
+    Z" 
+    fill="#FFFFFF"
+    filter="drop-shadow(0 2px 2px rgba(0,0,0,0.1))"/>
+</svg>

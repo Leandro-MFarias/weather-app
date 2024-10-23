@@ -1,4 +1,4 @@
-export function Forecast({ forecast }) {
+export function Forecast({ forecast, allIcons }) {
   let dailyForecast = {};
 
   for (let daily of forecast.list) {
@@ -12,7 +12,7 @@ export function Forecast({ forecast }) {
 
   function convertDate(date) {
     const newDate = new Date(date.dt * 1000).toLocaleDateString("pt-BR", {
-      weekday: "long",
+      weekday: "short",
       day: "2-digit",
     });
 
@@ -20,28 +20,33 @@ export function Forecast({ forecast }) {
   }
 
   return (
-    <div className=" max-w-screen-lg self-start space-y-6">
+    <div className="w-[490px] flex flex-col justify-center bg-darkBox p-8 rounded-2xl shadow-shape">
       <h2 className="text-xl">Previsão Próximos 5 dias</h2>
-      <div className="h-[1px] w-screen max-w-screen-xl bg-white" />
 
-      <div className="flex justify-between w-screen max-w-screen-xl gap-x-10">
-        {nextFiveDays.map((forecast) => (
-          <div key={forecast.dt} className="space-y-2">
-            <p className="capitalize">{convertDate(forecast)}</p>
+      <div className="flex flex-col space-y-4 w-full">
+        {nextFiveDays.map((forecast) => {
+          const weatherIconCode = forecast.weather[0].icon;
+          const weatherIcon = allIcons[weatherIconCode] || allIcons["01d"];
+          return (
+            <>
+              <div
+                key={forecast.dt}
+                className="flex justify-between items-center space-y-2"
+              >
+                <p className="capitalize">{convertDate(forecast)}</p>
 
-            <img
-              src={`http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`}
-              alt="weather icon"
-              className="w-20"
-            />
-            <p className="capitalize">{forecast.weather[0].description}</p>
+                <img src={weatherIcon} alt="weather icon" className="w-20" />
+                <p className="capitalize">{forecast.weather[0].description}</p>
 
-            <p>
-              {forecast.main.temp_min.toFixed()} °C min /{" "}
-              {forecast.main.temp_max.toFixed()} °C máx
-            </p>
-          </div>
-        ))}
+                <p>
+                  {forecast.main.temp_min.toFixed()}/
+                  {forecast.main.temp_max.toFixed()}
+                </p>
+              </div>
+              <div className="h-[1px] w-full bg-slate-700" />
+            </>
+          );
+        })}
       </div>
     </div>
   );

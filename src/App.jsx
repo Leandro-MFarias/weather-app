@@ -1,17 +1,44 @@
-import axios from "axios";
-import { useRef, useState } from "react";
+import axios, { all } from "axios";
+import { useState } from "react";
 import { WeatherInfo } from "./components/WeatherInfo";
 import { Forecast } from "./components/Forecast";
-import { TopButtons } from "./components/TopButtons";
+import { Input } from "./components/Input";
+import { Buttons } from "./components/Buttons";
+import { WeatherDetails } from "./components/WeatherDetails";
+
+import sun from './assets/sun-icon.svg'
+import cloud from './assets/cloud-icon.svg'
+import flatWeather from './assets/flat-weather-icon.svg'
+import layeredClouds from './assets/layered-clouds.svg'
+import partly from './assets/partly-cloudy-icon.svg'
+import rain from './assets/rain-clouds.svg'
+import sunRainCloud from './assets/sun-rain-cloud.svg'
+import snowflake from './assets/snowflake.svg'
 
 export function App() {
-  const [cityData, setCityData] = useState();
-  const [forecast, setForecast] = useState();
+  const [cityData, setCityData] = useState({});
+  const [forecast, setForecast] = useState({});
+  const [city, setCity] = useState("");
+  const [isFormSubmited, setIsFormSubmmited] = useState(false);
 
-  const inputRef = useRef();
+  const allIcons = {
+    '01d': sun,
+    '01n': sun,
+    '02d': partly,
+    '02n': partly,
+    '03d': cloud,
+    '03n': cloud,
+    '04d': layeredClouds,
+    '04n': layeredClouds,
+    '09d': rain,
+    '09n': rain,
+    '10d': sunRainCloud,
+    '10n': sunRainCloud,
+    '13d': snowflake,
+    '11d': flatWeather,
+  }
 
-  async function searchCity(data) {
-    const city = data && inputRef.current.value;
+  async function searchCity(city) {
     const key = "dde75ac00aba72930ff4a27e56ec4f1e";
 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&lang=pt_br&units=metric`;
@@ -22,15 +49,36 @@ export function App() {
 
     setCityData(fetchData.data);
     setForecast(forecastData.data);
+    setIsFormSubmmited(true)
+    console.log(cityData);
+  }
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    console.log("Form enviado");
+    searchCity(city);
+    setTimeout(() => {
+      setIsFormSubmmited(true);
+    }, 1000);
   }
 
   return (
-    <main className={`text-white h-screen bg-gradient-to-br shadow-xl shadow-gray-400 from-cyan-600 to-blue-700 p-2`}>
-      <div className="mx-auto max-w-screen-xl flex flex-col pt-16 space-y-20">
-        <TopButtons inputRef={inputRef} searchCity={searchCity} setCityData={setCityData} />
+    <main className="bg-customDark text-slate-50 h-screen px-6 pt-14 space-y-6">
+      <div className="flex space-x-8">
+        <form className="flex space-x-6" onSubmit={handleFormSubmit}>
+          <Buttons searchCity={searchCity} />
 
-        {cityData && <WeatherInfo cityData={cityData} />}
-        {forecast && <Forecast forecast={forecast} />}
+          <div className="w-screen max-w-screen-lg space-y-6">
+            <Input setCity={setCity} city={city} />
+            {isFormSubmited && (
+              <>
+                <WeatherInfo cityData={cityData} allIcons={allIcons} />
+                <WeatherDetails cityData={cityData} />
+              </>
+            )}
+          </div>
+        </form>
+        <div className="flex items-center">{isFormSubmited && <Forecast forecast={forecast} allIcons={allIcons} />}</div>
       </div>
     </main>
   );

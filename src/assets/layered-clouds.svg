@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Back cloud (darker) -->
+  <path d="
+    M25 45
+    C25 36 32 30 40 30
+    C42 25 49 22 55 25
+    C59 20 67 20 72 25
+    C77 25 82 30 82 35
+    C82 42 77 46 72 46
+    L40 46
+    C32 46 25 42 25 45
+    Z" 
+    fill="#CCCCCC"
+    filter="drop-shadow(0 2px 2px rgba(0,0,0,0.1))"/>
+    
+  <!-- Front cloud (lighter) -->
+  <path d="
+    M15 55
+    C15 46 22 40 30 40
+    C32 35 39 32 45 35
+    C49 30 57 30 62 35
+    C67 35 72 40 72 45
+    C72 52 67 56 62 56
+    L30 56
+    C22 56 15 52 15 55
+    Z" 
+    fill="#FFFFFF"
+    filter="drop-shadow(0 2px 2px rgba(0,0,0,0.1))"/>
+</svg>

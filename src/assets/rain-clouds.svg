@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Back cloud (darker) with rain -->
+  <path d="
+    M25 45
+    C25 36 32 30 40 30
+    C42 25 49 22 55 25
+    C59 20 67 20 72 25
+    C77 25 82 30 82 35
+    C82 42 77 46 72 46
+    L40 46
+    C32 46 25 42 25 45
+    Z" 
+    fill="#CCCCCC"
+    filter="drop-shadow(0 2px 2px rgba(0,0,0,0.1))"/>
+    
+  <!-- Rain drops in multiple layers -->
+  <g fill="#89CFF0">
+    <!-- First layer (original) -->
+    <path d="M35 50l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M45 50l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M55 50l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M65 50l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M75 50l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Second layer -->
+    <path d="M30 60l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M40 60l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M50 60l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M60 60l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M70 60l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Third layer -->
+    <path d="M35 70l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M45 70l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M55 70l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M65 70l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M75 70l-2 8" stroke="#89CFF0" stroke-width="2" stroke-linecap="round"/>
+  </g>
+    
+  <!-- Front cloud (lighter) -->
+  <path d="
+    M15 55
+    C15 46 22 40 30 40
+    C32 35 39 32 45 35
+    C49 30 57 30 62 35
+    C67 35 72 40 72 45
+    C72 52 67 56 62 56
+    L30 56
+    C22 56 15 52 15 55
+    Z" 
+    fill="#FFFFFF"
+    filter="drop-shadow(0 2px 2px rgba(0,0,0,0.1))"/>
+</svg>

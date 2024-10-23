@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <path d="
+    M25 50
+    C25 40 35 32 45 32
+    C48 25 58 20 67 25
+    C75 18 88 20 92 30
+    C97 30 100 38 100 43
+    C100 52 95 58 88 58
+    L45 58
+    C35 58 25 52 25 50
+    Z" 
+    fill="#FFFFFF"
+    filter="drop-shadow(0 2px 2px rgba(0,0,0,0.1))"/>
+</svg>
