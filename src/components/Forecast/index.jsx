@@ -24,7 +24,7 @@ export function Forecast({ forecast, allIcons }) {
       <h2 className="text-xl">Previsão Próximos 5 dias</h2>
 
       <div className="flex flex-col space-y-4 w-full">
-        {nextFiveDays.map((forecast) => {
+        {nextFiveDays.map(forecast => {
           const weatherIconCode = forecast.weather[0].icon;
           const weatherIcon = allIcons[weatherIconCode] || allIcons["01d"];
           return (
