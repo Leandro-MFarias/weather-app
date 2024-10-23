@@ -3,6 +3,10 @@ import { BiSolidDropletHalf } from "react-icons/bi";
 import { FiWind } from "react-icons/fi";
 
 export function WeatherDetails({ cityData }) {
+  if (!cityData || !cityData.main) {
+    return null;
+  }
+
   return (
     <div className="space-y-6 bg-darkBox p-6 rounded-2xl shadow-shape">
       <h2 className="text-lg text-zinc-400 font-semibold">Condições do Ar</h2>

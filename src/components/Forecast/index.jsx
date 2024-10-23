@@ -1,4 +1,8 @@
 export function Forecast({ forecast, allIcons }) {
+  if (!forecast || !forecast.list) {
+    return null;
+  }
+
   let dailyForecast = {};
 
   for (let daily of forecast.list) {
@@ -28,9 +32,8 @@ export function Forecast({ forecast, allIcons }) {
           const weatherIconCode = forecast.weather[0].icon;
           const weatherIcon = allIcons[weatherIconCode] || allIcons["01d"];
           return (
-            <>
+            <div className="flex flex-col" key={forecast.dt}>
               <div
-                key={forecast.dt}
                 className="flex justify-between items-center space-y-2"
               >
                 <p className="capitalize">{convertDate(forecast)}</p>
@@ -44,7 +47,7 @@ export function Forecast({ forecast, allIcons }) {
                 </p>
               </div>
               <div className="h-[1px] w-full bg-slate-700" />
-            </>
+            </div>
           );
         })}
       </div>

@@ -1,4 +1,8 @@
 export function WeatherInfo({ cityData, allIcons }) {
+  if (!cityData || !cityData.weather || !cityData.main || cityData.weather.length === 0) {
+    return <h2 className="text-center text-3xl">Cidade não encontrada</h2>;
+  }
+
   const weatherIconCode = cityData.weather[0].icon
   const weatherIcon = allIcons[weatherIconCode] || allIcons['01d']
 
