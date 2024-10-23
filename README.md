@@ -18,7 +18,5 @@
 </p>
 
 ### 📸 Preview
-<video autoplay loop muted>
-    <source src="./public/weatherApp.mp4" type="video/mp4">
-</video>
+<img src="./public/weatherApp.png">
 
